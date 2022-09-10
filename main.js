@@ -25,25 +25,23 @@ function draw(){
     text('Hex = #' + decTohex(color1) + decTohex(color2) + decTohex(color3), 25, 100);                  //display hex color
     text('HSL = ' + h + '\u00B0, ' + round(s * 100) + '%, ' + round(l * 100) + '%', 25, 150);           //display hsl colors
 
-    let hComp = HslToRgb(h + 180, s, l);
-    let rP = hComp[0], gP = hComp[1], bP = hComp[2];
-    fill(rP,gP,bP);
-    square(0, windowHeight - 200, 100);
+    genShades(h, s, l, 2);
+    genShades(h + 90, s, l, 3);
 
-    let h2 = HslToRgb(h, s - s * 0.1, l);
-    let r2 = h2[0], g2 = h2[1], b2 = h2[2];
-    fill(r2,g2,b2);
-    square(0, windowHeight - 100, 100);
+    // let h2 = HslToRgb(h, s - s * 0.1, l);
+    // let r2 = h2[0], g2 = h2[1], b2 = h2[2];
+    // fill(r2,g2,b2);
+    // square(0, windowHeight - 100, 100);
 
-    let h3 = HslToRgb(h, s - s * 0.2, l);
-    let r3 = h3[0], g3 = h3[1], b3 = h2[2];
-    fill(r3,g3,b3);
-    square(100, windowHeight - 100, 100);
+    // let h3 = HslToRgb(h, s - s * 0.2, l);
+    // let r3 = h3[0], g3 = h3[1], b3 = h2[2];
+    // fill(r3,g3,b3);
+    // square(100, windowHeight - 100, 100);
 
-    let h4 = HslToRgb(h, s - s * 0.3, l);
-    let r4 = h4[0], g4 = h4[1], b4 = h4[2];
-    fill(r4,g4,b4);
-    square(200, windowHeight - 100, 100);
+    // let h4 = HslToRgb(h, s - s * 0.3, l);
+    // let r4 = h4[0], g4 = h4[1], b4 = h4[2];
+    // fill(r4,g4,b4);
+    // square(200, windowHeight - 100, 100);
 
     textAlign(CENTER);
     fill(255, 255, 255);
