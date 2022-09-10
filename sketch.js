@@ -25,6 +25,8 @@ function RgbToHsl(R, G, B){                                         //too much c
         S = (max-min)/(max+min);
     } else if(L > 0.5){
         S = (max-min)/(2.0-max-min);
+    } else if(L== 0){
+        S = 0;
     }
 
     switch(max){
@@ -40,6 +42,10 @@ function RgbToHsl(R, G, B){                                         //too much c
             H = 4.0 + (R-G)/(max-min);
         break;
     }
+
+    if(S == 0){
+        H = 0;
+    }
     
     H = round(H * 60);
 
@@ -51,8 +57,14 @@ function RgbToHsl(R, G, B){                                         //too much c
 }
 
 function HslToRgb(H, S, L){
-    if(H < 360){
+    if(H > 360){
         H = H - 360;
+    }
+    if(S > 1){
+        S = S - 1;
+    }
+    if(L > 1){
+        L = L - 1;
     }
 
     let R, G, B;
@@ -182,9 +194,25 @@ function draw(){
     text('HSL = ' + h + '\u00B0, ' + round(s * 100) + '%, ' + round(l * 100) + '%', 25, 150);           //display hsl colors
 
     let hComp = HslToRgb(h + 180, s, l);
-    let rP = hComp[0], gP = hComp[0], bP = hComp[1];
+    let rP = hComp[0], gP = hComp[1], bP = hComp[2];
     fill(rP,gP,bP);
     square(0, windowHeight - 100, 100);
+    text('Color = ' + rP + 'R, ' + gP + 'G, ' + bP + 'B', 25, windowHeight - 100);
+
+    let h2 = HslToRgb(h, s - s * 0.1, l);
+    let r2 = h2[0], g2 = h2[1], b2 = h2[2];
+    fill(r2,g2,b2);
+    square(100, windowHeight - 100, 100);
+
+    let h3 = HslToRgb(h, s - s * 0.2, l);
+    let r3 = h3[0], g3 = h3[1], b3 = h2[2];
+    fill(r3,g3,b3);
+    square(200, windowHeight - 100, 100);
+
+    let h4 = HslToRgb(h, s - s * 0.3, l);
+    let r4 = h4[0], g4 = h4[1], b4 = h4[2];
+    fill(r4,g4,b4);
+    square(300, windowHeight - 100, 100);
 
     textAlign(CENTER);
     fill(255, 255, 255);
