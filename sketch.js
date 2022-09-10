@@ -196,23 +196,22 @@ function draw(){
     let hComp = HslToRgb(h + 180, s, l);
     let rP = hComp[0], gP = hComp[1], bP = hComp[2];
     fill(rP,gP,bP);
-    square(0, windowHeight - 100, 100);
-    text('Color = ' + rP + 'R, ' + gP + 'G, ' + bP + 'B', 25, windowHeight - 100);
+    square(0, windowHeight - 200, 100);
 
     let h2 = HslToRgb(h, s - s * 0.1, l);
     let r2 = h2[0], g2 = h2[1], b2 = h2[2];
     fill(r2,g2,b2);
-    square(100, windowHeight - 100, 100);
+    square(0, windowHeight - 100, 100);
 
     let h3 = HslToRgb(h, s - s * 0.2, l);
     let r3 = h3[0], g3 = h3[1], b3 = h2[2];
     fill(r3,g3,b3);
-    square(200, windowHeight - 100, 100);
+    square(100, windowHeight - 100, 100);
 
     let h4 = HslToRgb(h, s - s * 0.3, l);
     let r4 = h4[0], g4 = h4[1], b4 = h4[2];
     fill(r4,g4,b4);
-    square(300, windowHeight - 100, 100);
+    square(200, windowHeight - 100, 100);
 
     textAlign(CENTER);
     fill(255, 255, 255);
