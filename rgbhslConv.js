@@ -50,6 +50,9 @@ function HslToRgb(H, S, L){
     if(H > 360){
         H = H - 360;
     }
+    if(H > 360){
+        H = H - 360;
+    }
     if(S > 1){
         S = S - 1;
     }

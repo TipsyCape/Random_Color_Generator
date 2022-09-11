@@ -18,14 +18,20 @@ function draw(){
     let h = hsl[0], s = hsl[1], l = hsl[2];
 
     background(color1, color2, color3);
-    textSize(32);
+    textSize(windowWidth/35);
     fill(255, 255, 255);
     textAlign(LEFT);
     text('Color = ' + color1 + 'R, ' + color2 + 'G, ' + color3 + 'B', 25, 50);                          //display rgb colors
     text('Hex = #' + decTohex(color1) + decTohex(color2) + decTohex(color3), 25, 100);                  //display hex color
     text('HSL = ' + h + '\u00B0, ' + round(s * 100) + '%, ' + round(l * 100) + '%', 25, 150);           //display hsl colors
 
- //   hueShift(h, s, l, 4);
+    // hueShift(h, s, l, 11);
+    // hueShift(h+10, s, l, 10);
+    // hueShift(h+20, s, l, 9);
+    // hueShift(h+30, s, l, 8);
+
+
+
     satShift(h, s, l, 2);
     satShift(h, s - 0.1*s, l, 3);
     satShift(h, s - 0.2*s, l, 4);
@@ -38,5 +44,6 @@ function draw(){
 
     textAlign(CENTER);
     fill(255, 255, 255);
+    textSize(windowWidth/35)
     text('Click to generate a random color pallet!', windowWidth/2, windowHeight/2);                //instructions
 }
