@@ -25,25 +25,18 @@ function draw(){
     text('Hex = #' + decTohex(color1) + decTohex(color2) + decTohex(color3), 25, 100);                  //display hex color
     text('HSL = ' + h + '\u00B0, ' + round(s * 100) + '%, ' + round(l * 100) + '%', 25, 150);           //display hsl colors
 
-    genShades(h, s, l, 2);
-    genShades(h + 90, s, l, 3);
+ //   hueShift(h, s, l, 4);
+    satShift(h, s, l, 2);
+    satShift(h, s - 0.1*s, l, 3);
+    satShift(h, s - 0.2*s, l, 4);
+    satShift(h, s - 0.3*s, l, 5)
 
-    // let h2 = HslToRgb(h, s - s * 0.1, l);
-    // let r2 = h2[0], g2 = h2[1], b2 = h2[2];
-    // fill(r2,g2,b2);
-    // square(0, windowHeight - 100, 100);
-
-    // let h3 = HslToRgb(h, s - s * 0.2, l);
-    // let r3 = h3[0], g3 = h3[1], b3 = h2[2];
-    // fill(r3,g3,b3);
-    // square(100, windowHeight - 100, 100);
-
-    // let h4 = HslToRgb(h, s - s * 0.3, l);
-    // let r4 = h4[0], g4 = h4[1], b4 = h4[2];
-    // fill(r4,g4,b4);
-    // square(200, windowHeight - 100, 100);
+    lumShift(h, s, l-0.3*l, 2);
+    lumShift(h, s, l-0.2*l, 3);
+    lumShift(h, s, l-0.1*l, 4);
+    lumShift(h, s, l, 5);
 
     textAlign(CENTER);
     fill(255, 255, 255);
-    text('Click any button to generate a random color!', windowWidth/2, windowHeight/2);                //instructions
+    text('Click to generate a random color pallet!', windowWidth/2, windowHeight/2);                //instructions
 }
