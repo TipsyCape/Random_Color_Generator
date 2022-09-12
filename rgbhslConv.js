@@ -1,3 +1,5 @@
+// if R == G || R == B || G == B then there is no saturation, meaning you can just scale each value to the luminance.
+
 function RgbToHsl(R, G, B){                                         //too much complicated math to explain in the next two functions
     let H;
     let S;

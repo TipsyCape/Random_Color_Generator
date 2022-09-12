@@ -1,3 +1,5 @@
+//weird bug where sometimes one of the lumShift's sets the G=255 and doesnt change. does not happen often but needs to be addressed
+
 let color1 = 0;
 let color2 = 0;
 let color3 = 0;
@@ -33,14 +35,14 @@ function draw(){
 
 
     satShift(h, s, l, 2);
-    satShift(h, s - 0.1*s, l, 3);
-    satShift(h, s - 0.2*s, l, 4);
-    satShift(h, s - 0.3*s, l, 5);
+    satShift(h+45, s, l, 3);
+    satShift(h+90, s, l, 4);
+    satShift(h+135, s, l, 5);
 
-    lumShift(h, s, l-0.6*l, 2);
-    lumShift(h, s, l-0.4*l, 3);
-    lumShift(h, s, l-0.2*l, 4);
-    lumShift(h, s, l, 5);
+    lumShift(h, s, l, 2);
+    lumShift(h+45, s, l, 3);
+    lumShift(h+90, s, l, 4);
+    lumShift(h+135, s, l, 5);
 
     textAlign(CENTER);
     fill(255, 255, 255);

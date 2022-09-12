@@ -2,6 +2,8 @@
 todo - 1. rework the hueshift function... not working as i would like it to
         a.shift the hue, and generate a pallet based off of that shifted color instead of generating a bunch of different colors with the hue shifted
        2. add the hue shift to the middle to separate the luminance and saturation pallets
+       3. change the random color generation to a button instead of random clicks, making it easier to preserve the color on screen.
+       4. allow the user to manually put in values(in RGB or HSL)
 */
 
 function hueShift(H, S, L, height){
@@ -46,7 +48,7 @@ function satShift(H, S, L, height){
     }
 
     for(w = 5; w >= 0; w--){
-        satBuff[w] = S - S*0.1*u;
+        satBuff[w] = S - S*0.15*u;
         u++;
         if(satBuff[w] > 1){
             satBuff[w] = satBuff[w] - 1;
