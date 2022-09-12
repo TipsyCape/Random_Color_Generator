@@ -2,7 +2,6 @@
 todo - 1. rework the hueshift function... not working as i would like it to
         a.shift the hue, and generate a pallet based off of that shifted color instead of generating a bunch of different colors with the hue shifted
        2. add the hue shift to the middle to separate the luminance and saturation pallets
-       3. add the functionality to get the color codes of each color in each pallet
 */
 
 function hueShift(H, S, L, height){
@@ -46,7 +45,7 @@ function satShift(H, S, L, height){
         y = windowHeight - windowWidth/20 * x;
     }
 
-    for(w = 8; w >= 0; w--){
+    for(w = 5; w >= 0; w--){
         satBuff[w] = S - S*0.1*u;
         u++;
         if(satBuff[w] > 1){
@@ -75,8 +74,8 @@ function lumShift(H, S, L, height){
         y = windowHeight - windowWidth/20 * x;
     }
 
-    for(w = 8; w >= 0; w--){
-        lumBuff[w] = L - L*0.01*u;
+    for(w = 5; w >= 0; w--){
+        lumBuff[w] = L - L*0.1*u;
         L = lumBuff[w];
         u++;
     }

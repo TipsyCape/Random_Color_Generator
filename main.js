@@ -23,7 +23,7 @@ function draw(){
     textAlign(LEFT);
     text('Color = ' + color1 + 'R, ' + color2 + 'G, ' + color3 + 'B', 25, 50);                          //display rgb colors
     text('Hex = #' + decTohex(color1) + decTohex(color2) + decTohex(color3), 25, 100);                  //display hex color
-    text('HSL = ' + h + '\u00B0, ' + round(s * 100) + '%, ' + round(l * 100) + '%', 25, 150);           //display hsl colors
+    text('HSL = ' + h + '\u00B0, ' + round(s * 100) + '%, ' + round(l * 100) + '%', 25, 150);           //display hsl colors 
 
     // hueShift(h, s, l, 11);
     // hueShift(h+10, s, l, 10);
@@ -35,15 +35,20 @@ function draw(){
     satShift(h, s, l, 2);
     satShift(h, s - 0.1*s, l, 3);
     satShift(h, s - 0.2*s, l, 4);
-    satShift(h, s - 0.3*s, l, 5)
+    satShift(h, s - 0.3*s, l, 5);
 
-    lumShift(h, s, l-0.3*l, 2);
-    lumShift(h, s, l-0.2*l, 3);
-    lumShift(h, s, l-0.1*l, 4);
+    lumShift(h, s, l-0.6*l, 2);
+    lumShift(h, s, l-0.4*l, 3);
+    lumShift(h, s, l-0.2*l, 4);
     lumShift(h, s, l, 5);
 
     textAlign(CENTER);
     fill(255, 255, 255);
-    textSize(windowWidth/35)
+    textSize(windowWidth/35);
     text('Click to generate a random color pallet!', windowWidth/2, windowHeight/2);                //instructions
+
+    let c = get(mouseX, mouseY);
+    console.log(c);
+    textAlign(RIGHT);
+    text('Color = ' + c[0] + 'R, ' + c[1] + 'G, ' + c[2] + 'B', windowWidth - windowWidth/30, 50);    
 }
