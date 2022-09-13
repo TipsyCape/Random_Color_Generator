@@ -5,9 +5,9 @@ let color2 = 0;
 let color3 = 0;
 
 function mousePressed(){                                            //detect mouse click, on mouse click, generate random color
-    color1 = floor(random(0, 255));
-    color2 = floor(random(0, 255));
-    color3 = floor(random(0, 255));
+    color1 = round(random(0, 255));
+    color2 = round(random(0, 255));
+    color3 = round(random(0, 255));
 }
 
 function setup(){
